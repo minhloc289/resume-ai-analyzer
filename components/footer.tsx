@@ -38,12 +38,19 @@ export function Footer() {
             {/* Social Links */}
             <div className="flex gap-2 pt-2">
               <Button
+                asChild
                 variant="outline"
                 size="icon"
                 className="h-9 w-9 hover:bg-purple-500/10 hover:border-purple-500/50 hover:text-purple-500 transition-all"
-                aria-label="Follow us on Facebook"
               >
-                <Facebook className="h-4 w-4" />
+                <Link
+                  href="https://www.facebook.com/minhloc.caingoc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow me on Facebook"
+                >
+                  <Facebook className="h-4 w-4" />
+                </Link>
               </Button>
               <Button
                 variant="outline"
@@ -51,15 +58,14 @@ export function Footer() {
                 className="h-9 w-9 hover:bg-purple-500/10 hover:border-purple-500/50 hover:text-purple-500 transition-all"
                 aria-label="Follow us on Instagram"
               >
-                <Instagram className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="h-9 w-9 hover:bg-purple-500/10 hover:border-purple-500/50 hover:text-purple-500 transition-all"
-                aria-label="Follow us on Twitter"
-              >
-                <Twitter className="h-4 w-4" />
+                <Link
+                  href="https://www.instagram.com/cnml_2809/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow me on Instagram"
+                >
+                  <Instagram className="h-4 w-4" />
+                </Link>
               </Button>
               <Button
                 variant="outline"
@@ -67,7 +73,14 @@ export function Footer() {
                 className="h-9 w-9 hover:bg-purple-500/10 hover:border-purple-500/50 hover:text-purple-500 transition-all"
                 aria-label="Follow us on LinkedIn"
               >
-                <Linkedin className="h-4 w-4" />
+                <Link
+                  href="https://www.linkedin.com/in/ng%E1%BB%8Dc-minh-l%E1%BB%99c-c%C3%A1i-b5b9b9259//"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Lét's connect on LinkedIn"
+                >
+                  <Linkedin className="h-4 w-4" />
+                </Link>
               </Button>
               <Button
                 variant="outline"
@@ -75,7 +88,14 @@ export function Footer() {
                 className="h-9 w-9 hover:bg-purple-500/10 hover:border-purple-500/50 hover:text-purple-500 transition-all"
                 aria-label="Star us on GitHub"
               >
-                <Github className="h-4 w-4" />
+                <Link
+                  href="https://github.com/minhloc289"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Give me a star on GitHub"
+                >
+                  <Github className="h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>
