@@ -199,6 +199,15 @@
   text-shadow: 0 0 20px var(--color-ai-glow), 0 0 40px var(--color-ai-glow);
 }
 
+.ai-glow-text {
+  text-shadow: 0 0 20px var(--color-ai-glow), 0 0 40px var(--color-ai-glow);
+}
+
+.text-glow {
+  /* text-shadow: [X-offset] [Y-offset] [Blur] [Color] */
+  text-shadow: 0 0 12px oklch(var(--primary) / 0.5);
+}
+
 /* Enhanced reduced motion support for accessibility */
 @media (prefers-reduced-motion: reduce) {
   *,

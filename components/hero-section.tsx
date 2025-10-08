@@ -1,22 +1,30 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Upload, Sparkles, ArrowRight } from "lucide-react";
+import {
+  Upload,
+  Sparkles,
+  ArrowRight,
+  CheckCircle,
+  BarChart,
+  Zap,
+} from "lucide-react";
 import { AnimatedBackground } from "@/components/animated-background";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
       <AnimatedBackground />
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm"
-            whileHover={{ scale: 1.05 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full
+             border border-white/10 bg-white/5 backdrop-blur-md"
+            whileHover={{ scale: 1.04 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
           >
             <Sparkles className="h-5 w-5 text-primary" />
@@ -25,14 +33,15 @@ export function HeroSection() {
             </span>
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight text-balance">
-            <span className="text-foreground">AI-Powered</span>
+          <h1 className="mx-auto max-w-4xl text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
+            <span className="bg-gradient-to-b from-foreground via-foreground/90 to-foreground/70 bg-clip-text text-transparent">
+              AI-Powered
+            </span>
             <br />
-            <span className="text-foreground">Resume Analysis</span>
-            <br />
+            <span className="text-foreground/95">Resume Analysis</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-foreground font-semibold max-w-2xl mx-auto text-pretty leading-relaxed">
+          <p className="mx-auto max-w-2xl text-lg md:text-2xl text-foreground/80 font-medium leading-relaxed">
             Upload resume—AI analysis & score in 30s. Unlock strengths & career
             fits.
           </p>
@@ -46,13 +55,13 @@ export function HeroSection() {
               >
                 <Button
                   size="lg"
-                  className="relative overflow-hidden group h-14 px-8 text-lg ai-glow min-h-[44px]"
+                  className="relative h-14 px-8 text-lg font-semibold rounded-xl bg-white text-black 
+                            border border-transparent transition-all duration-300 
+                            hover:shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 
+                            active:scale-[0.98]"
                 >
-                  <Upload className="mr-2 h-5 w-5" />
-                  <span className="relative z-10 font-semibold">
-                    Upload Resume Now
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  <Upload className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:-translate-y-[1px]" />
+                  Upload Resume Now
                 </Button>
               </motion.div>
             </Link>
@@ -63,25 +72,36 @@ export function HeroSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="h-14 px-8 text-lg border-primary/20 hover:border-primary/40 bg-transparent font-semibold min-h-[44px]"
+                className="relative h-14 px-8 text-lg font-semibold rounded-xl 
+                          bg-black text-white border border-white/15 transition-all duration-300
+                          hover:bg-neutral-900 hover:border-white/25 hover:shadow-[0_0_20px_rgba(255,255,255,0.08)] 
+                          hover:-translate-y-0.5 active:scale-[0.98]"
               >
-                <span>See Example</span>
-                <ArrowRight className="ml-2 h-5 w-5" />
+                See Example
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Button>
             </motion.div>
           </div>
 
-          <div className="pt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-foreground font-semibold">
-            <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+          <div className="pt-12 flex flex-wrap items-center justify-center gap-8 md:gap-12">
+            <div className="group flex items-center gap-3 text-sm font-semibold text-foreground/90">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/5 ring-1 ring-primary/20 group-hover:bg-primary/10 group-hover:ring-primary/30 transition-all duration-300 shadow-[0_0_12px_oklch(var(--primary)/0.15)] group-hover:shadow-[0_0_20px_oklch(var(--primary)/0.25)]">
+                <CheckCircle className="h-4 w-4 text-foreground" />
+              </div>
               <span>Free Analysis</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-secondary animate-pulse" />
-              <span>No Sign-up</span>
+
+            <div className="group flex items-center gap-3 text-sm font-semibold text-foreground/90">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/5 ring-1 ring-primary/20 group-hover:bg-primary/10 group-hover:ring-primary/30 transition-all duration-300 shadow-[0_0_12px_oklch(var(--primary)/0.15)] group-hover:shadow-[0_0_20px_oklch(var(--primary)/0.25)]">
+                <BarChart className="h-4 w-4 text-foreground" />
+              </div>
+              <span>In-depth Analysis</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
+
+            <div className="group flex items-center gap-3 text-sm font-semibold text-foreground/90">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/5 ring-1 ring-primary/20 group-hover:bg-primary/10 group-hover:ring-primary/30 transition-all duration-300 shadow-[0_0_12px_oklch(var(--primary)/0.15)] group-hover:shadow-[0_0_20px_oklch(var(--primary)/0.25)]">
+                <Zap className="h-4 w-4 text-foreground" />
+              </div>
               <span>Instant Results</span>
             </div>
           </div>

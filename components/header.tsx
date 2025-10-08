@@ -12,7 +12,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-2 group">
           <motion.div
             className="relative flex"
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
           >
             <Sparkles className="h-7 w-7 text-primary transition-transform mr-2" />
