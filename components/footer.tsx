@@ -21,7 +21,7 @@ export function Footer() {
 
   return (
     <footer className="relative border-t border-border/40 bg-background">
-      <div className="container mx-auto px-10 py-12">
+      <div className="container mx-auto px-10 py-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand Section */}
           <div className="space-y-4">
@@ -210,7 +210,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border/40">
+        <div className="pt-10 border-t border-border/40">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-foreground/60">
               © 2025 AI Resume Analyzer. All rights reserved.

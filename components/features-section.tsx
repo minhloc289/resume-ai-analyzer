@@ -1,27 +1,35 @@
-"use client"
+"use client";
 
-import { Brain, Target, TrendingUp, FileCheck, Zap, Shield } from "lucide-react"
-import { Card } from "@/components/ui/card"
-import { motion } from "framer-motion"
+import {
+  Brain,
+  Target,
+  TrendingUp,
+  FileCheck,
+  Zap,
+  Shield,
+} from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 const features = [
   {
     icon: Brain,
     title: "AI Career Path Detection",
     description: "Analyze experience & skills for optimal career direction.",
-    color: "text-primary",
+    color: "text-blue-500",
   },
   {
     icon: Target,
     title: "Smart Resume Scoring",
-    description: "Comprehensive scores based on structure, keywords & industry standards.",
-    color: "text-secondary",
+    description:
+      "Comprehensive scores based on structure, keywords & industry standards.",
+    color: "text-indigo-500",
   },
   {
     icon: TrendingUp,
     title: "Personalized Recommendations",
     description: "Actionable suggestions to improve content & missing skills.",
-    color: "text-accent",
+    color: "text-chart-2",
   },
   {
     icon: FileCheck,
@@ -32,7 +40,8 @@ const features = [
   {
     icon: Zap,
     title: "Instant Analysis",
-    description: "Detailed insights in under 30 seconds with lightning-fast AI.",
+    description:
+      "Detailed insights in under 30 seconds with lightning-fast AI.",
     color: "text-chart-5",
   },
   {
@@ -41,15 +50,17 @@ const features = [
     description: "Data processed securely—never stored or shared.",
     color: "text-primary",
   },
-]
+];
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="py-24 bg-muted/30">
+    <section id="features" className="py-16 lg:py-24 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-balance text-foreground">Powered by AI Intelligence</h2>
-          <p className="text-xl text-foreground font-semibold text-pretty">
+        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-balance text-foreground">
+            Powered by AI Intelligence
+          </h2>
+          <p className="text-xl text-muted-foreground text-pretty">
             Advanced AI analyzes every aspect for comprehensive insights.
           </p>
         </div>
@@ -69,13 +80,19 @@ export function FeaturesSection() {
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.15, ease: "easeOut" }}
                   >
-                    <feature.icon className={`h-14 w-14 ${feature.color} transition-all duration-150`} />
+                    <feature.icon
+                      className={`h-14 w-14 ${feature.color} transition-all duration-150`}
+                    />
                     <div
                       className={`absolute inset-0 ${feature.color} opacity-0 blur-xl group-hover:opacity-60 transition-opacity duration-150`}
                     />
                   </motion.div>
-                  <h3 className="text-xl font-bold text-foreground">{feature.title}</h3>
-                  <p className="text-foreground font-semibold text-pretty leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-foreground">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground text-pretty leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
               </Card>
             </motion.div>
@@ -83,5 +100,5 @@ export function FeaturesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

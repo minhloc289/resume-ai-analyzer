@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { Upload, Cpu, BarChart3, Download } from "lucide-react"
-import { motion } from "framer-motion"
+import { Upload, Cpu, BarChart3, Download } from "lucide-react";
+import { motion } from "framer-motion";
 
 const steps = [
   {
@@ -28,20 +28,31 @@ const steps = [
     description: "Get full report.",
     step: "04",
   },
-]
+];
 
 export function HowItWorksSection() {
   return (
     <section id="how-it-works" className="py-24">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-balance">
+          <h2 className="text-4xl md:text-5xl font-bold text-balance text-foreground">
             How It{" "}
-            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Works
+            <span className="relative inline-block">
+              <span
+                className="
+                  absolute -inset-2 
+                  bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-500
+                  rounded-full
+                  blur-xl
+                  opacity-40
+                  group-hover:opacity-80 transition-opacity
+                "
+                aria-hidden="true"
+              ></span>
+              <span className="relative z-10">Works</span>
             </span>
           </h2>
-          <p className="text-xl text-foreground font-semibold text-pretty">
+          <p className="text-xl text-muted-foreground text-pretty">
             Professional resume analysis in four simple steps
           </p>
         </div>
@@ -68,13 +79,17 @@ export function HowItWorksSection() {
                     {step.step}
                   </div>
                 </motion.div>
-                <h3 className="text-xl font-bold text-foreground">{step.title}</h3>
-                <p className="text-foreground font-semibold text-pretty leading-relaxed">{step.description}</p>
+                <h3 className="text-xl font-bold text-foreground">
+                  {step.title}
+                </h3>
+                <p className="text-foreground font-semibold text-pretty leading-relaxed">
+                  {step.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

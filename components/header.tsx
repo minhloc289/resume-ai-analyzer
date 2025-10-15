@@ -1,3 +1,4 @@
+// header.tsx
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -8,7 +9,8 @@ import { motion } from "framer-motion";
 export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-xl">
-      <div className="container mx-auto px-8 h-16 flex items-center justify-between">
+      {/* Bỏ class 'container' và 'mx-auto' để nội dung chiếm toàn bộ chiều rộng */}
+      <div className="px-8 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
           <motion.div
             className="relative flex"

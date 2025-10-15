@@ -199,13 +199,68 @@
   text-shadow: 0 0 20px var(--color-ai-glow), 0 0 40px var(--color-ai-glow);
 }
 
-.ai-glow-text {
-  text-shadow: 0 0 20px var(--color-ai-glow), 0 0 40px var(--color-ai-glow);
+@layer base {
+  :root {
+    --purple-glow: 247 94% 68%; /* Màu tím sáng */
+    --blue-glow: 200 86% 65%;   /* Màu xanh sáng */
+    --cyan-glow: 184 86% 65%;   /* Màu cyan sáng */
+  }
 }
 
-.text-glow {
-  /* text-shadow: [X-offset] [Y-offset] [Blur] [Color] */
-  text-shadow: 0 0 12px oklch(var(--primary) / 0.5);
+.shine-button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate; /* Tạo context stacking mới */
+  background: oklch(var(--background)); /* Nền mặc định */
+  border: 1px solid oklch(var(--border)); /* Viền mặc định */
+  transition: all 0.3s ease;
+}
+
+.shine-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    oklch(from var(--purple-glow) h c l / 0.8) 0%,
+    oklch(from var(--blue-glow) h c l / 0.8) 50%,
+    oklch(from var(--cyan-glow) h c l / 0.8) 100%
+  );
+  opacity: 0; /* Ẩn gradient ban đầu */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: -1;
+}
+
+.shine-button:hover::before {
+  opacity: 1; /* Hiện gradient khi hover */
+  transform: scale(1.1); /* Hơi phóng to gradient */
+}
+
+.shine-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    oklch(from var(--background) h c l / 0.7) 0%,
+    oklch(from var(--background) h c l / 0.1) 100%
+  ); /* Lớp phủ mờ */
+  backdrop-filter: blur(2px); /* Hiệu ứng kính mờ */
+  transition: opacity 0.3s ease;
+}
+
+.shine-button:hover::after {
+  opacity: 0; /* Biến mất lớp phủ khi hover */
+}
+
+/* Thêm glow cho button */
+.shine-button-glow {
+  box-shadow: 0 0 0px 0px oklch(var(--primary) / 0.05); /* Shadow nhẹ mặc định */
+  transition: box-shadow 0.3s ease;
+}
+
+.shine-button-glow:hover {
+  box-shadow: 0 0 20px 0px oklch(var(--primary) / 0.3); /* Shadow nổi bật khi hover */
 }
 
 /* Enhanced reduced motion support for accessibility */
