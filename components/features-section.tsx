@@ -58,7 +58,21 @@ export function FeaturesSection() {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold text-balance text-foreground">
-            Powered by AI Intelligence
+            Powered by{" "}
+            <span className="relative inline-block">
+              <span
+                className="
+                  absolute -inset-2 
+                  bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-500
+                  rounded-full
+                  blur-xl
+                  opacity-40
+                  group-hover:opacity-80 transition-opacity
+                "
+                aria-hidden="true"
+              ></span>
+              <span className="relative z-10">AI Intelligent</span>
+            </span>{" "}
           </h2>
           <p className="text-xl text-muted-foreground text-pretty">
             Advanced AI analyzes every aspect for comprehensive insights.
